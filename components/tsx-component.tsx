@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import React from "react";
 
 export type TsxComponentProps = {
   /**
@@ -7,6 +7,6 @@ export type TsxComponentProps = {
   thing: "this" | "that";
 }
 
-export const TsxComponent = styled.div<TsxComponentProps>`
-  color: green;
-`;
+export const TsxComponent: React.FC<TsxComponentProps> = ({ thing, children }) => (
+  <div style={{color: "green"}}>{children}</div>
+);
